@@ -1,0 +1,120 @@
+/* Css Rest */
+
+*{
+ margin: 0;
+ padding: 0;
+
+}
+/* *{
+    box-sizing: border-box;
+} */
+ 
+body{
+    overflow: hidden;
+    animation: bodyshake linear 6s infinite;
+}
+
+.sky{
+
+    width: 100vw;
+    height: 100vh;
+    background-image: url(background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    display: inline-block;
+}
+.trees{
+    /* if i writen backgroun-image:url(trees.png) then background-repeat: no-repeat shoud be writen in the next lint */
+    /* background-repeat: no-repeat; */
+
+    /* but in writn it in a single line by using background */
+    background: url(trees.png) ,no-repeat;
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    position: absolute;
+   
+}
+.track{
+    height: 60vh;
+    width: 800vw;
+    background-image: url(track.png);
+    position: absolute;
+    top: 80vh;
+    animation: CarMoveOnTheRoad linear 16s infinite ;
+
+
+   
+}
+.car{
+    height: 53px;
+    width: 167px;
+    top: 73vh;
+    left: 28vw;;
+    background-image: url(car_body.png);
+    background-size: cover;
+    position:absolute;
+    animation: carshake linear .7s infinite;
+    
+    
+}
+.wheel_left img{
+    width: 35px;
+    position: relative;
+    /* background-image: url(car_wheel_left.png); */
+    top: 17px;
+    left: 22px;
+    
+    animation: wheelrotation linear .18s infinite;
+}
+
+.wheel_right img{
+    width: 35px;
+    position: relative;
+    top: -17px;
+    left: 117px;
+    animation: wheelrotation linear .18s infinite;    
+
+}
+
+
+/* Then I will include Animation to move car left and right wheel */
+
+@keyframes wheelrotation{
+    100%{
+        /* it will rotate the wheels in 2 deg */
+        transform: rotate(360deg);
+    }
+}
+@keyframes CarMoveOnTheRoad{
+    100%{
+        /* it will translate the car in 2D onlong x-Axies */
+        transform: translateX(-500vw);
+    }
+}
+
+@keyframes carshake{
+    0%{
+        transform: translateY(-1vh);
+    }
+    50%{
+        transform: translateY(1vh);
+    }
+    100%{
+        transform: translateY(-1vh);
+    }
+    
+}
+@keyframes bodyshake{
+    0%{
+        transform: translateY(-1vh);
+    }
+    50%{
+        transform: translateY(1vh);
+    }
+    100%{
+        transform: translateY(-1vh);
+    }
+    
+}
